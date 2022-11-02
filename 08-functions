@@ -1,0 +1,26 @@
+#!/bin/sh
+
+# define a function
+hello() {
+	echo "Hello, I am $1 $2"
+}
+
+# call the hello functiong
+hello runfun wolf			# Hello, I am runfun wolf
+
+# define a functio with a return value
+give_me_args() {
+	if [ $# -eq 0 ]
+	then
+		echo "no argument"
+		return 1
+	else
+		echo "have some arguments, they are: $@"
+		return $#
+	fi
+}
+# call give_me_args
+give_me_args						# no argument
+echo $?								# 1
+give_me_args some arguments here	# have some arguments, they are: some arguments here
+echo $?								# 3
