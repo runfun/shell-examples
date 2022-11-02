@@ -1,0 +1,27 @@
+#!/bin/sh
+
+if [ $# -lt 2 ]; then
+	echo "you should type more than 2 arguments"
+	echo "example: $0 first second"
+	exit 1
+fi
+
+echo "\`\$$\` show the current process id number"
+echo ">>> current process id: $$"
+echo "\`\$0\` : filename of the current script"
+echo ">>> filename: $0"
+echo "\`\$1\` : the first argument"
+echo ">>> first argument: $1"
+echo "\`\$1\` : the second argument"
+echo ">>> second argument: $2"
+echo "\`\$#\` : the number of arguments"
+echo ">>> arguments number: $#"
+echo "\`\$*\` : quote arguments"
+echo ">>> $*"
+echo "\`\$@\` : individual quote arguments"
+echo ">>> $@"
+echo "\`\$!\` : process number of the last background command"
+echo ">>> $!"
+echo "\`\$?\` : The exit status of the last command executed"
+echo ">>> $?"
+

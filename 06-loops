@@ -1,0 +1,60 @@
+#!/bin/sh
+echo "while...do...done"
+echo "for...in...do...done"
+echo "until...do...done"
+echo "select...in...do...done"
+echo "continue"
+echo "break"
+echo "=========="
+
+#----------while----------#
+i=1
+while [ $i -lt 10 ]
+do
+	j=1
+	while [ $j -lt 10 ]
+	do
+		echo -n `expr $i \* $j`
+		j=`expr $j + 1`
+	done
+	echo ${line[@]:1}
+	i=`expr $i + 1`
+done
+
+#----------for----------#
+for var in 0 1 2 3
+do
+	echo $var
+done
+
+for file in $HOME/Pictures/*
+do
+	echo $file
+done
+
+
+#----------until----------#
+count=3
+until [ $count -lt 1 ]
+do
+	echo "******"
+	count=`expr $count - 1`
+done
+
+#----------select----------#
+select DRINK in tea cofee water juice appe all none
+do
+   case $DRINK in
+      tea|cofee|water|all) 
+         echo "Go to canteen"
+         ;;
+      juice|appe)
+         echo "Available at home"
+      ;;
+      none) 
+         break 
+      ;;
+      *) echo "ERROR: Invalid selection" 
+      ;;
+   esac
+done

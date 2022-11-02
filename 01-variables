@@ -1,0 +1,45 @@
+#!/bin/sh
+
+#---------- 1. defining variables ----------#
+A=a
+B=b
+C=c
+
+echo $A
+echo $B
+echo $C
+
+A=A
+B=B
+C=C
+
+echo $A
+echo $B
+echo $C
+
+#--------- 2. defining readonly variable ----------#
+readonly NAME="NAME"
+readonly TYPE="TEXT"
+# error happen if try to change `NAME` and `TYPE`;
+# because both are readonly variables.
+# NAME="Jam"       # ERROR
+# TYPE="PERSON"    # ERROR
+
+echo $NAME
+echo $TYPE
+
+
+#----------3. unsetting variables -----------#
+unset A
+unset B
+unset C
+# error happen if you try to unset a readonly variable.
+# unset NAME	# ERROR
+# unset TYPE	# ERROR
+
+#----------4. type of variables----------#
+# there are three different types in shell.
+# - Local variable
+# - Environment variable
+# - Shell variables
+

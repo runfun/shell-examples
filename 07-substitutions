@@ -1,0 +1,33 @@
+#!/bin/sh
+
+#----------1. command substitution----------#
+echo "\`command\`"
+date=`date`
+echo "date is $date"
+users=`users`
+echo "users are $users"
+
+
+
+#----------2. variables substitution----------#
+echo "==================="
+
+echo "\${var}"					# subsititute the value of var
+NAME=`whoami`
+echo "${NAME}"
+
+echo "\${var:-word}"			# if var is null or unset, substitute word, don't change var
+echo ${a:-"You Are NULL"}
+echo $a
+
+echo "\${var:=word}"			# if var is null or unset, assign word to var
+echo ${b:=`date`}
+echo $b
+
+echo "\${var:+word}"			# if var is set, substitute word, don't change var
+echo ${d:+"DD^_^"}
+d="any"
+echo ${d:+"DD^.^"}
+
+echo "\${var:?message}"			# if ver is null or unset, message to stderr
+echo ${c:?You are null}

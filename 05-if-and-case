@@ -1,0 +1,42 @@
+#!/bin/sh
+
+echo "if...fi"
+echo "if...else...fi"
+echo "if...elif...else...fi"
+
+echo "case...esac"
+echo "========================"
+
+file="$HOME/Code/temp/temp.cc"
+
+#----------if----------#
+if [ -f $file ]
+then
+	echo "$file exists"
+else
+	echo "not found"
+fi
+
+#----------case----------#
+echo "1 -Rock"
+echo "2 -Paper"
+echo "3 -Scissors"
+read input
+
+my="I show Paper"
+case $input in
+	1)
+		echo "$my , I win"
+		;;
+	2)
+		echo "$my , tie"
+		;;
+	3)
+		echo "$my, You win"
+		;;
+	*)
+		echo "What??"
+esac
+
+
+

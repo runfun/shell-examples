@@ -1,0 +1,58 @@
+#!/bin/sh
+
+#----------1. arthmetic operators---------#
+echo `expr 32 + 8`
+echo `expr 32 - 16`
+echo "`expr 4 \* 8`"
+echo `expr 4 / 8`
+echo `expr 32 % 5`
+
+a=1
+b=2
+echo [ $a == $b ]
+echo [ $a != $b ]
+
+#----------2. relational operators----------#
+echo [ $a -eq $b ]
+echo [ $a -ne $b ]
+echo [ $a -gt $b ]
+echo [ $a -lt $b ]
+echo [ $a -ge $b ]
+echo [ $a -le $b ]
+
+
+#----------3. boolean operator----------#
+echo $[ !false ]					# not
+echo [ $a -lt 20 -o $b -gt 100 ]	# or
+echo [ $a -lt 20 -a $b -gt 100 ]	# and
+
+
+#----------4. string operator----------#
+echo [ $a = $b ]
+echo [ $a != $b ]
+echo [ -z $a ]		# if zero length, retuen true
+echo [ -n $a ]		# if non-zero length, return true
+echo [ $a ]			# if not-empty, return true
+
+
+#----------5. file test----------#
+file="$HOME/Code/temp/temp.cc"
+
+echo [ -b $file ]		# block file		 -> true
+echo [ -c $file ]		# character file	 -> true
+echo [ -d $file ]		# directory			 -> true
+echo [ -f $file ]		# file				 -> true
+echo [ -g $file ]		# set group id		 -> true
+echo [ -k $file ]		# set stick bit		 -> true
+echo [ -p $file ]		# pipe name			 -> true
+echo [ -t $file ]		# file descripter open
+						#   and associted with a terminal	-> true
+echo [ -u $file ]		# set user id		 -> true
+echo [ -r $file ]		# readable			 -> true
+echo [ -w $file ]		# writable			 -> true
+echo [ -x $file ]		# executable		 -> true
+echo [ -s $file ]		# size -gt 0		 -> true
+echo [ -e $file ]		# file or dir exits  -> true
+
+
+
